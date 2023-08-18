@@ -23,8 +23,8 @@
         <p>Search</p>
       </div>
     </nav>
-    <section id="intro" class="bg-[#DCC1AB]">
-      <div>
+    <section id="intro" class="bg-[#DCC1AB] w-full h-[737px] flex justify-between">
+      <div class="w-[599px]">
         <div id="headline">Nowoczesna aranżacja Twojego ogrodu</div>
         <div id="text">
           Marka GiardDesign to wieloletnie doświadczenie i wysoka estetyka
@@ -36,7 +36,19 @@
           <button>Zobacz nasze realizacje</button>
         </div>
       </div>
-      <div>Zdjęcie</div>
+      <div class="relative flex h-[737px] w-[688px]">
+        <img src="./media/img/hero_photo.png" alt="" class=""/>
+        <div class="bg-[#F5F0EC] h-[96px] w-[192px] absolute bottom-0 right-0 flex justify-around items-center">
+          <img
+            src="./media/icons/arrow_left.svg"
+            alt="Arrow left - show previous image" class="h-[49px] w-[49px] inline"
+          />
+          <img
+            src="./media/icons/arrow_left.svg"
+            alt="Arrow left - show previous image" class="h-[49px] w-[49px] inline"
+          />
+        </div>
+      </div>
     </section>
 
     <section id="oferta" class="bg-[#F5F0EC]">
@@ -146,7 +158,9 @@
       </div>
       <div class="flex justify-between">
         <p>Prawa zastrzezone &copy 2022</p>
-        <p>made by <img src="./media/img/logo.svg" alt="logo" class="inline" /></p>
+        <p>
+          made by <img src="./media/img/logo.svg" alt="logo" class="inline" />
+        </p>
       </div>
     </footer>
   </body>
