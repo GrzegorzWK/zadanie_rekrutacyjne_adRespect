@@ -1,20 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>giarddesign</title>
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
-    <nav id="nawigacja">
-      <p>giarddesign</p>
-      <p>Oferta</p>
-      <p>O firmie</p>
-      <p>Realizacje</p>
-      <p>Kontakt</p>
-      <p>Search</p>
+    <nav
+      id="nawigacja"
+      class="flex items-center h-[59px] bg-[#FFFFFF] mr-[89px] ml-[89px]"
+    >
+      <div class="flex w-full justify-between">
+        <p class="text-[19px] self-center">giarddesign</p>
+        <div class="flex gap-[5px] self-center">
+          <p class="text-[15px]">Oferta</p>
+          <img src="./media/icons/chevron.svg" alt="down chevron" />
+        </div>
+        <p class="text-[15px] self-center">O firmie</p>
+        <p class="text-[15px] self-center">Realizacje</p>
+        <p class="text-[15px] self-center">Kontakt</p>
+        <p>Search</p>
+      </div>
     </nav>
-    <section id="intro">
+    <section id="intro" class="bg-[#DCC1AB]">
       <div>
         <div id="headline">Nowoczesna aranżacja Twojego ogrodu</div>
         <div id="text">
