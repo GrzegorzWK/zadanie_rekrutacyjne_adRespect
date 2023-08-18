@@ -13,45 +13,89 @@
     >
       <div class="flex w-full justify-between">
         <p class="text-[19px] self-center">giarddesign</p>
-        <div class="flex gap-[5px] self-center">
+        <div id="oferta-nav-div" class="flex gap-[5px] self-center">
           <p class="text-[15px]">Oferta</p>
           <img src="./media/icons/chevron.svg" alt="down chevron" />
         </div>
         <p class="text-[15px] self-center">O firmie</p>
         <p class="text-[15px] self-center">Realizacje</p>
         <p class="text-[15px] self-center">Kontakt</p>
-        <p>Search</p>
+        <img
+          id="search"
+          src="./media/icons/search.svg"
+          alt="Search Icon"
+          class="inline"
+        />
       </div>
     </nav>
-    <section id="intro" class="bg-[#DCC1AB] w-full h-[737px] flex justify-between">
-      <div class="w-[599px]">
-        <div id="headline">Nowoczesna aranżacja Twojego ogrodu</div>
-        <div id="text">
-          Marka GiardDesign to wieloletnie doświadczenie i wysoka estetyka
-          realizacji. Oferujemy kompleksowy zakres usług z indywidualnym
-          podejściem do każdego projektu.
+    <section
+      id="intro"
+      class="bg-[#DCC1AB] w-full h-[737px] flex justify-end gap-[44px]"
+    >
+      <!-- Hero Text -->
+      <div
+        class="w-[599px] h-[448px] flex flex-col justify-between self-center gap-[72px]"
+      >
+        <!-- Hero title + description -->
+        <div class="flex flex-col gap-[44px]">
+          <div
+            id="headline"
+            class="h-[210px] w-[588px] font-['Montserrat'] text-[60px]"
+          >
+            <b>Nowoczesna aranżacja Twojego ogrodu</b>
+          </div>
+          <div id="text" class="h-[72px] w-[489px] font-['Inter'] text-[16px]">
+            Marka GiardDesign to wieloletnie doświadczenie i wysoka estetyka
+            realizacji. Oferujemy kompleksowy zakres usług z indywidualnym
+            podejściem do każdego projektu.
+          </div>
         </div>
-        <div id="buttons">
-          <button>Skontaktuj się z nami</button>
-          <button>Zobacz nasze realizacje</button>
+        <!-- Hero buttons -->
+        <div
+          id="buttons"
+          class="flex h-[50px] font-['Inter'] text-[16px] gap-[36px]"
+        >
+          <button
+            class="h-full text-[#F5F0EC] bg-[#1B5B31] py-2 px-4 rounded-full"
+          >
+            Skontaktuj się z nami
+          </button>
+          <button
+            class="h-full text-[#1B5B31] bg-transparent border border-[#1B5B31] py-2 px-4 rounded-full"
+          >
+            Zobacz nasze realizacje
+            <img src="./media/icons/arrow_down.svg" alt="" class="inline" />
+          </button>
         </div>
       </div>
+
+      <!-- Hero IMG -->
       <div class="relative flex h-[737px] w-[688px]">
-        <img src="./media/img/hero_photo.png" alt="" class=""/>
-        <div class="bg-[#F5F0EC] h-[96px] w-[192px] absolute bottom-0 right-0 flex justify-around items-center">
-          <img
-            src="./media/icons/arrow_left.svg"
-            alt="Arrow left - show previous image" class="h-[49px] w-[49px] inline"
-          />
-          <img
-            src="./media/icons/arrow_left.svg"
-            alt="Arrow left - show previous image" class="h-[49px] w-[49px] inline"
-          />
+        <img src="./media/img/hero_photo.png" alt="Hero photo" />
+        <div
+          class="bg-[#F5F0EC] h-[96px] w-[192px] absolute bottom-0 right-0 flex justify-evenly items-center"
+        >
+          <div class="h-[49px] w-[49px] flex justify-center items-center">
+            <img
+              id="prev-slide"
+              src="./media/icons/arrow_left.svg"
+              alt="Arrow left - show previous slide"
+              class="inline"
+            />
+          </div>
+          <div class="h-[49px] w-[49px] flex justify-center items-center">
+            <img
+              id="next-slide"
+              src="./media/icons/arrow_right.svg"
+              alt="Arrow right - show next image"
+              class="inline"
+            />
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="oferta" class="bg-[#F5F0EC]">
+    <section id="section-oferta" class="bg-[#F5F0EC]">
       <div id="oferta-text">
         <p>Oferta</p>
         <p>
