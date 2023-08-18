@@ -7,6 +7,9 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body class="font-['Inter']">
+    <!--https://tailwindcss.com/docs/background-color 
+        https://masonry.desandro.com/
+    -->
     <nav
       id="nawigacja"
       class="flex items-center h-[59px] bg-[#FFFFFF] mr-[89px] ml-[89px]"
@@ -63,7 +66,7 @@
             class="h-full text-[#1B5B31] bg-transparent border border-[#1B5B31] py-2 px-4 rounded-full"
           >
             Zobacz nasze realizacje
-            <img src="./media/icons/arrow_down.svg" alt="" class="inline" />
+            <img src="./media/icons/arrow_intro.svg" alt="" class="inline" />
           </button>
         </div>
       </div>
@@ -108,8 +111,8 @@
         </p>
       </div>
       <div id="cards-holder" class="flex">
-        <div id="card-1">
-          <p>ICON</p>
+        <div id="card-projekty">
+          <img src="./media/icons/projekty.svg" alt="" />
           <p>Projekty</p>
           <p>
             Zaprojektujemy Twój ogród w nowoczesnym stylu i z najlepszym
@@ -117,8 +120,8 @@
           </p>
           <button>Dowiedz się więcej</button>
         </div>
-        <div id="card-2">
-          <p>ICON</p>
+        <div id="card-wizualizacje">
+          <img src="./media/icons/wizualizacje.svg" alt="" />
           <p>Wizualizacje</p>
           <p>
             Przedstawimy Ci projekty koncepcyjne w postaci wirtualnego spaceru
@@ -126,8 +129,8 @@
           </p>
           <button>Dowiedz się więcej</button>
         </div>
-        <div id="card-3">
-          <p>ICON</p>
+        <div id="card-realizacje">
+          <img src="./media/icons/realizacje.svg" alt="" />
           <p>Realizacje</p>
           <p>
             Zrealizujemy Twoje marzenie przy użyciu najnowszych rozwiązań i
@@ -154,7 +157,12 @@
             minimalizm, geometria i elegancka prostota. Tworzymy ogrody
             małoobsługowe, dostosowane do współczesnego trybu życia.
           </p>
-          <button>Poznaj nas bliżej</button>
+          <button
+            class="h-full text-[#F5F0EC] bg-transparent border border-[#F5F0EC] py-2 px-4 rounded-full"
+          >
+            Poznaj nas bliżej
+            <img src="./media/icons/arrow_o_firmie.svg" alt="" class="inline" />
+          </button>
         </div>
       </div>
     </section>
@@ -170,8 +178,8 @@
       <button>Rozwiń</button>
     </section>
 
-    <section id="instagram" class="bg-[#F5F0EC]">
-      <div>
+    <section id="instagram" class="p-10 bg-[#F5F0EC]">
+      <div class="bg-[#1B5B31]">
         <div>
           <b
             >Zostańmy w kontakcie!<br />Znajdziesz nas na <i>Instagramie.</i></b
@@ -179,7 +187,11 @@
         </div>
         <div>
           <p>Śledź nasze najnowsze realizacje</p>
-          <button>Instagram</button>
+          <button
+            class="h-full text-[#1B5B31] bg-[#F5F0EC] py-2 px-4 rounded-full"
+          >
+            Instagram
+          </button>
         </div>
       </div>
     </section>
@@ -188,7 +200,11 @@
       <div>
         <p><b>giard</b>design</p>
         <p>Daj znać, co możemy dla Ciebie zrobić!</p>
-        <button>Skontaktuj się z nami</button>
+        <button
+          class="h-full text-[#F5F0EC] bg-[#1B5B31] py-2 px-4 rounded-full"
+        >
+          Skontaktuj się z nami
+        </button>
       </div>
       <p>Divider</p>
       <div>
