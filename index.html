@@ -4,7 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>giarddesign</title>
+    <!-- Scripts -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
   </head>
   <body class="font-['Inter']">
     <!--https://tailwindcss.com/docs/background-color 
@@ -239,7 +241,7 @@
     </section>
 
     <!-- Section realizacje -->
-    <section id="realizacje" class="bg-[#DCC1AB] h-[1824px]">
+    <section id="realizacje" class="bg-[#DCC1AB] h-full">
       <div class="pt-[120px] flex flex-col gap-[96px]">
         <!-- Realizacje header -->
         <div class="flex flex-col px-[120px] gap-[16px]">
@@ -250,10 +252,52 @@
         </div>
 
         <!-- Realizacje grid -->
-        <div class="relative h-[1475px]">
-          <p>GRID</p>
+        <div class="relative h-full">
+          <div id="grid">
+            <div id="grid-item">
+              <img src="./media/img/Photo-1.png" alt="" />
+            </div>
+            <div id="grid-item">
+              <img src="./media/img/Photo-2.png" alt="" />
+            </div>
+            <div id="grid-item">
+              <img src="./media/img/Photo-3.png" alt="" />
+            </div>
+            <div id="grid-item">
+              <img src="./media/img/Photo-4.png" alt="" />
+            </div>
+            <div id="grid-item">
+              <img src="./media/img/Photo-5.png" alt="" />
+            </div>
+            <div id="grid-item">
+              <img src="./media/img/Photo-6.png" alt="" />
+            </div>
+            <div id="grid-item">
+              <img src="./media/img/Photo-7.png" alt="" />
+            </div>
+            <div id="grid-item">
+              <img src="./media/img/Photo-8.png" alt="" />
+            </div>
+            <div id="grid-item">
+              <img src="./media/img/Photo-9.png" alt="" />
+            </div>
+          </div>
 
-          <div class="flex justify-center">
+          <div class="flex justify-center mb-[50px]">
+            <button
+              class="w-[123px] h-[50px] text-[#111111] bg-transparent border border-[#111111] py-2 px-4 rounded-full"
+            >
+              Zwiń
+              <img
+                src="./media/icons/arrow_realizacje.svg"
+                alt=""
+                class="inline rotate-180"
+              />
+            </button>
+          </div>
+
+          <!-- to toogle: -->
+          <!-- <div class="flex justify-center">
             <button
               class="w-[123px] h-[50px] absolute bottom-[50px] text-[#111111] bg-transparent border border-[#111111] py-2 px-4 rounded-full"
             >
@@ -264,7 +308,7 @@
                 class="inline"
               />
             </button>
-          </div>
+          </div> -->
         </div>
       </div>
     </section>
@@ -349,4 +393,21 @@
       </div>
     </footer>
   </body>
+
+  <script>
+    window.onload = () => {
+      const grid = document.getElementById("grid");
+
+      const masonry = new Masonry(grid, {
+        itemSelector: "#grid-item",
+        gutter: 25,
+      });
+    };
+  </script>
+
+  <style>
+    #grid-item {
+      margin-bottom: 25px;
+    }
+  </style>
 </html>
