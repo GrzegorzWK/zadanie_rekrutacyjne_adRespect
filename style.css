@@ -2,7 +2,7 @@
   border: 2px solid red;
 }
 
-
-#grid-item {
+.my-grid-item {
   margin-bottom: 35px;
+  z-index: 0;
 }

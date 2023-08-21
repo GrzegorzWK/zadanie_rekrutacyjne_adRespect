@@ -186,6 +186,7 @@
         </div>
 
         <!-- Card wizualizacje -->
+
         <div
           id="card-wizualizacje"
           class="bg-white w-[378px] h-[370px] px-[48px] py-[40px] rounded-[28px] flex flex-col justify-between duration-200 hover:scale-105 hover:shadow-2xl"
@@ -229,6 +230,23 @@
             </button>
             <img src="./media/icons/arrow_oferta.svg" alt="" class="inline" />
           </div>
+        </div>
+      </div>
+
+      <div
+        id="modal"
+        class="hidden fixed z-100 p-[100px] left-0 top-0 w-full h-full overflow-auto bg-[#666666]/[0.6]"
+      >
+        <div
+          id="modal-content"
+          class="bg-[#F5F0EC] rounded-lg m-auto p-[20px] h-fit"
+        >
+          <span
+            id="close-button"
+            class="float-right text-[30px] font-bold cursor-pointer hover:text-[#1B5B31]"
+            >&times;</span
+          >
+          <div id="modal-projects"></div>
         </div>
       </div>
     </section>
@@ -291,32 +309,32 @@
 
         <!-- Realizacje grid -->
         <div class="relative h-full">
-          <div id="grid">
-            <div id="grid-item">
+          <div id="my-grid">
+            <div class="my-grid-item z-0">
               <img src="./media/img/Photo-1.png" alt="" />
             </div>
-            <div id="grid-item">
+            <div class="my-grid-item">
               <img src="./media/img/Photo-2.png" alt="" />
             </div>
-            <div id="grid-item">
+            <div class="my-grid-item z-0">
               <img src="./media/img/Photo-3.png" alt="" />
             </div>
-            <div id="grid-item">
+            <div class="my-grid-item">
               <img src="./media/img/Photo-4.png" alt="" />
             </div>
-            <div id="grid-item">
+            <div class="my-grid-item">
               <img src="./media/img/Photo-5.png" alt="" />
             </div>
-            <div id="grid-item">
+            <div class="my-grid-item">
               <img src="./media/img/Photo-6.png" alt="" />
             </div>
-            <div id="grid-item">
+            <div class="my-grid-item">
               <img src="./media/img/Photo-7.png" alt="" />
             </div>
-            <div id="grid-item">
+            <div class="my-grid-item">
               <img src="./media/img/Photo-8.png" alt="" />
             </div>
-            <div id="grid-item">
+            <div class="my-grid-item">
               <img src="./media/img/Photo-9.png" alt="" />
             </div>
           </div>
@@ -354,12 +372,12 @@
     <!-- Section instagram -->
     <section
       id="instagram"
-      class="h-[478px] py-[60px] px-[200px] bg-[#F5F0EC] text-[#F5F0EC]"
+      class="h-[478px] py-[60px] px-[200px] bg-[#F5F0EC] text-[#F5F0EC] z-0"
     >
       <div class="bg-[#1B5B31] py-[120px] px-[110px] flex gap-[64px]">
-        <div class="relative">
+        <div class="relative z-0">
           <div class="w-[599px] text-[40px] font-['Montserrat'] leading-tight">
-            <p class="absolute bottom-0 left-0">
+            <p class="absolute bottom-0 left-0 z-0">
               Zostańmy w kontakcie!<br />Znajdziesz nas na
               <i class="font-['Inter']">Instagramie.</i>
             </p>
@@ -434,10 +452,10 @@
 
   <script>
     window.onload = () => {
-      const grid = document.getElementById("grid");
+      const grid = document.getElementById("my-grid");
 
       const masonry = new Masonry(grid, {
-        itemSelector: "#grid-item",
+        itemSelector: ".my-grid-item",
         gutter: 35,
       });
     };
@@ -446,5 +464,62 @@
       document.getElementById("searchInput").classList.toggle("hidden");
       document.getElementById("searchIcon").classList.toggle("bg-[#F5F0EC]");
     };
+
+    const modal = document.getElementById("modal");
+    const cardProjekty = document.getElementById("card-projekty");
+    const closeButton = document.getElementById("close-button");
+    const modalProjects = document.getElementById("modal-projects");
+
+    const openProjektyModal = () => {
+      modal.classList.remove("hidden");
+
+      let img = document.createElement("img");
+      img.src = `./media/img/Photo-${1}.png`;
+      img.classList.add("w-auto");
+      modalProjects.appendChild(img);
+    };
+
+    const closeModal = () => {
+      modal.classList.add("hidden");
+    };
+
+    cardProjekty.onclick = () => openProjektyModal();
+    closeButton.onclick = () => closeModal();
+
+    // close modal when clicking on window
+    window.onclick = function (event) {
+      const modal = document.getElementById("modal");
+      if (event.target == modal) {
+        modal.classList.add("hidden");
+      }
+    };
   </script>
 </html>
+
+<!-- <div class="grid-item1">
+  <img src="./media/img/Photo-1.png" alt="" />
+</div>
+<div class="grid-item1">
+  <img src="./media/img/Photo-2.png" alt="" />
+</div>
+<div class="grid-item1">
+  <img src="./media/img/Photo-3.png" alt="" />
+</div>
+<div id="grid-item2">
+  <img src="./media/img/Photo-4.png" alt="" />
+</div>
+<div id="grid-item2">
+  <img src="./media/img/Photo-5.png" alt="" />
+</div>
+<div id="grid-item2">
+  <img src="./media/img/Photo-6.png" alt="" />
+</div>
+<div id="grid-item3">
+  <img src="./media/img/Photo-7.png" alt="" />
+</div>
+<div id="grid-item3">
+  <img src="./media/img/Photo-8.png" alt="" />
+</div>
+<div id="grid-item3">
+  <img src="./media/img/Photo-9.png" alt="" />
+</div> -->
