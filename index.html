@@ -233,20 +233,44 @@
         </div>
       </div>
 
+      <!-- oferta Modal -->
       <div
         id="modal"
         class="hidden fixed z-100 p-[100px] left-0 top-0 w-full h-full overflow-auto bg-[#666666]/[0.6]"
       >
         <div
           id="modal-content"
-          class="bg-[#F5F0EC] rounded-lg m-auto p-[20px] h-fit"
+          class="bg-[#F5F0EC] rounded-lg m-auto p-[20px] h-fit w-full"
         >
           <span
             id="close-button"
             class="float-right text-[30px] font-bold cursor-pointer hover:text-[#1B5B31]"
             >&times;</span
           >
-          <div id="modal-projects"></div>
+          <div id="modal-projekty">
+            <p class="leading-8">Przykładowe projekty:</p>
+            <div class="flex gap-[30px]">
+              <img src="./media/img/Photo-1.png" alt="" class="w-[30%]" />
+              <img src="./media/img/Photo-2.png" alt="" class="w-[30%]" />
+              <img src="./media/img/Photo-3.png" alt="" class="w-[30%]" />
+            </div>
+          </div>
+          <div id="modal-wizualizacje">
+            <p class="leading-8">Przykładowe wizualizacje:</p>
+            <div class="flex gap-[30px]">
+              <img src="./media/img/Photo-4.png" alt="" class="w-[30%]" />
+              <img src="./media/img/Photo-5.png" alt="" class="w-[30%]" />
+              <img src="./media/img/Photo-6.png" alt="" class="w-[30%]" />
+            </div>
+          </div>
+          <div id="modal-realizacje">
+            <p class="leading-8">Przykładowe realizacje:</p>
+            <div class="flex gap-[30px]">
+              <img src="./media/img/Photo-7.png" alt="" class="w-[30%]" />
+              <img src="./media/img/Photo-8.png" alt="" class="w-[30%]" />
+              <img src="./media/img/Photo-9.png" alt="" class="w-[30%]" />
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -466,17 +490,35 @@
     };
 
     const modal = document.getElementById("modal");
-    const cardProjekty = document.getElementById("card-projekty");
     const closeButton = document.getElementById("close-button");
-    const modalProjects = document.getElementById("modal-projects");
+
+    const cardProjekty = document.getElementById("card-projekty");
+    const cardWizualizacje = document.getElementById("card-wizualizacje");
+    const cardRealizacje = document.getElementById("card-realizacje");
+
+    const modalProjekty = document.getElementById("modal-projekty");
+    const modalWizualizacje = document.getElementById("modal-wizualizacje");
+    const modalRealizacje = document.getElementById("modal-realizacje");
 
     const openProjektyModal = () => {
       modal.classList.remove("hidden");
+      modalProjekty.classList.remove("hidden");
+      modalWizualizacje.classList.add("hidden");
+      modalRealizacje.classList.add("hidden");
+    };
 
-      let img = document.createElement("img");
-      img.src = `./media/img/Photo-${1}.png`;
-      img.classList.add("w-auto");
-      modalProjects.appendChild(img);
+    const openWizualizacjeModal = () => {
+      modal.classList.remove("hidden");
+      modalProjekty.classList.add("hidden");
+      modalWizualizacje.classList.remove("hidden");
+      modalRealizacje.classList.add("hidden");
+    };
+
+    const openRealizacjeModal = () => {
+      modal.classList.remove("hidden");
+      modalProjekty.classList.add("hidden");
+      modalWizualizacje.classList.add("hidden");
+      modalRealizacje.classList.remove("hidden");
     };
 
     const closeModal = () => {
@@ -484,6 +526,8 @@
     };
 
     cardProjekty.onclick = () => openProjektyModal();
+    cardWizualizacje.onclick = () => openWizualizacjeModal();
+    cardRealizacje.onclick = () => openRealizacjeModal();
     closeButton.onclick = () => closeModal();
 
     // close modal when clicking on window
