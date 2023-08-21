@@ -51,7 +51,7 @@
             class="text-[15px] self-center hover:border-b-[1px] border-black"
             >Kontakt</a
           >
-          <button onclick="toggleSearch()">
+          <button>
             <input
               type="text"
               name="searchBar"
@@ -60,6 +60,7 @@
               class="hidden p-1 h-full w-max bg-[#F5F0EC] rounded-full"
             />
             <img
+              onclick="toggleSearch()"
               id="searchIcon"
               src="./media/icons/search.svg"
               alt="Search Icon"
