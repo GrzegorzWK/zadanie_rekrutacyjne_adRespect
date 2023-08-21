@@ -8,6 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
     <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js" defer></script>
   </head>
   <body class="font-['Inter']">
     <nav
@@ -95,12 +96,12 @@
         <!-- Hero buttons -->
         <div id="buttons" class="flex h-[50px] text-[16px] gap-[36px]">
           <button
-            class="h-full text-[#F5F0EC] bg-[#1B5B31] py-2 px-4 rounded-full"
+            class="h-full text-[#F5F0EC] bg-[#1B5B31] py-2 px-4 rounded-full duration-200 hover:scale-105 hover:shadow-2xl"
           >
             Skontaktuj się z nami
           </button>
           <button
-            class="h-full text-[#1B5B31] bg-transparent border border-[#1B5B31] py-2 px-4 rounded-full"
+            class="h-full text-[#1B5B31] bg-transparent border border-[#1B5B31] py-2 px-4 rounded-full duration-200 hover:scale-105 hover:shadow-2xl"
           >
             Zobacz nasze realizacje
             <img src="./media/icons/arrow_intro.svg" alt="" class="inline" />
@@ -122,7 +123,7 @@
                 id="prev-slide"
                 src="./media/icons/arrow_left.svg"
                 alt="Arrow left - show previous slide"
-                class="inline"
+                class="inline cursor-pointer duration-200 hover:scale-105 hover:shadow-2xl"
               />
             </div>
             <div class="h-[49px] w-[49px] flex justify-center items-center">
@@ -130,7 +131,7 @@
                 id="next-slide"
                 src="./media/icons/arrow_right.svg"
                 alt="Arrow right - show next image"
-                class="inline"
+                class="inline cursor-pointer duration-200 hover:scale-105 hover:shadow-2xl"
               />
             </div>
           </div>
@@ -165,7 +166,7 @@
         <!-- Card projekty -->
         <div
           id="card-projekty"
-          class="bg-white w-[378px] h-[370px] px-[48px] py-[40px] rounded-[28px] flex flex-col justify-between duration-200 hover:scale-105 hover:shadow-2xl"
+          class="bg-white w-[378px] h-[370px] px-[48px] py-[40px] rounded-[28px] flex flex-col justify-between cursor-pointer duration-200 hover:scale-105 hover:shadow-2xl"
         >
           <div class="h-[183px] flex flex-col justify-between">
             <div><img src="./media/icons/projekty.svg" alt="" /></div>
@@ -189,7 +190,7 @@
 
         <div
           id="card-wizualizacje"
-          class="bg-white w-[378px] h-[370px] px-[48px] py-[40px] rounded-[28px] flex flex-col justify-between duration-200 hover:scale-105 hover:shadow-2xl"
+          class="bg-white w-[378px] h-[370px] px-[48px] py-[40px] rounded-[28px] flex flex-col justify-between cursor-pointer duration-200 hover:scale-105 hover:shadow-2xl"
         >
           <div class="h-[183px] flex flex-col justify-between">
             <div><img src="./media/icons/wizualizacje.svg" alt="" /></div>
@@ -212,7 +213,7 @@
         <!-- Card realizacje -->
         <div
           id="card-realizacje"
-          class="bg-white w-[378px] h-[370px] px-[48px] py-[40px] rounded-[28px] flex flex-col justify-between duration-200 hover:scale-105 hover:shadow-2xl"
+          class="bg-white w-[378px] h-[370px] px-[48px] py-[40px] rounded-[28px] flex flex-col justify-between cursor-pointer duration-200 hover:scale-105 hover:shadow-2xl"
         >
           <div class="h-[183px] flex flex-col justify-between">
             <div><img src="./media/icons/realizacje.svg" alt="" /></div>
@@ -236,41 +237,18 @@
       <!-- oferta Modal -->
       <div
         id="modal"
-        class="hidden fixed z-100 p-[100px] left-0 top-0 w-full h-full overflow-auto bg-[#666666]/[0.6]"
+        class="hidden fixed z-50 p-[100px] left-0 top-0 w-full h-full overflow-auto bg-[#666666]/[0.6]"
       >
         <div
-          id="modal-content"
-          class="bg-[#F5F0EC] rounded-lg m-auto p-[20px] h-fit w-full"
+          id="modal-width"
+          class="bg-[#F5F0EC] rounded-lg m-auto p-[20px] h-fit"
         >
           <span
             id="close-button"
             class="float-right text-[30px] font-bold cursor-pointer hover:text-[#1B5B31]"
             >&times;</span
           >
-          <div id="modal-projekty">
-            <p class="leading-8">Przykładowe projekty:</p>
-            <div class="flex gap-[30px]">
-              <img src="./media/img/Photo-1.png" alt="" class="w-[30%]" />
-              <img src="./media/img/Photo-2.png" alt="" class="w-[30%]" />
-              <img src="./media/img/Photo-3.png" alt="" class="w-[30%]" />
-            </div>
-          </div>
-          <div id="modal-wizualizacje">
-            <p class="leading-8">Przykładowe wizualizacje:</p>
-            <div class="flex gap-[30px]">
-              <img src="./media/img/Photo-4.png" alt="" class="w-[30%]" />
-              <img src="./media/img/Photo-5.png" alt="" class="w-[30%]" />
-              <img src="./media/img/Photo-6.png" alt="" class="w-[30%]" />
-            </div>
-          </div>
-          <div id="modal-realizacje">
-            <p class="leading-8">Przykładowe realizacje:</p>
-            <div class="flex gap-[30px]">
-              <img src="./media/img/Photo-7.png" alt="" class="w-[30%]" />
-              <img src="./media/img/Photo-8.png" alt="" class="w-[30%]" />
-              <img src="./media/img/Photo-9.png" alt="" class="w-[30%]" />
-            </div>
-          </div>
+          <div id="modal-content"></div>
         </div>
       </div>
     </section>
@@ -334,32 +312,77 @@
         <!-- Realizacje grid -->
         <div class="relative h-full">
           <div id="my-grid">
-            <div class="my-grid-item z-0">
-              <img src="./media/img/Photo-1.png" alt="" />
+            <div class="my-grid-item">
+              <img
+                id="Photo-1"
+                class="photo cursor-pointer"
+                src="./media/img/Photo-1.png"
+                alt=""
+              />
             </div>
             <div class="my-grid-item">
-              <img src="./media/img/Photo-2.png" alt="" />
-            </div>
-            <div class="my-grid-item z-0">
-              <img src="./media/img/Photo-3.png" alt="" />
-            </div>
-            <div class="my-grid-item">
-              <img src="./media/img/Photo-4.png" alt="" />
-            </div>
-            <div class="my-grid-item">
-              <img src="./media/img/Photo-5.png" alt="" />
+              <img
+                id="Photo-2"
+                class="photo cursor-pointer"
+                src="./media/img/Photo-2.png"
+                alt=""
+              />
             </div>
             <div class="my-grid-item">
-              <img src="./media/img/Photo-6.png" alt="" />
+              <img
+                id="Photo-3"
+                class="photo cursor-pointer"
+                src="./media/img/Photo-3.png"
+                alt=""
+              />
             </div>
             <div class="my-grid-item">
-              <img src="./media/img/Photo-7.png" alt="" />
+              <img
+                id="Photo-4"
+                class="photo cursor-pointer"
+                src="./media/img/Photo-4.png"
+                alt=""
+              />
             </div>
             <div class="my-grid-item">
-              <img src="./media/img/Photo-8.png" alt="" />
+              <img
+                id="Photo-5"
+                class="photo cursor-pointer"
+                src="./media/img/Photo-5.png"
+                alt=""
+              />
             </div>
             <div class="my-grid-item">
-              <img src="./media/img/Photo-9.png" alt="" />
+              <img
+                id="Photo-6"
+                class="photo cursor-pointer"
+                src="./media/img/Photo-6.png"
+                alt=""
+              />
+            </div>
+            <div class="my-grid-item">
+              <img
+                id="Photo-7"
+                class="photo cursor-pointer"
+                src="./media/img/Photo-7.png"
+                alt=""
+              />
+            </div>
+            <div class="my-grid-item">
+              <img
+                id="Photo-8"
+                class="photo cursor-pointer"
+                src="./media/img/Photo-8.png"
+                alt=""
+              />
+            </div>
+            <div class="my-grid-item">
+              <img
+                id="Photo-9"
+                class="photo cursor-pointer"
+                src="./media/img/Photo-9.png"
+                alt=""
+              />
             </div>
           </div>
 
@@ -473,69 +496,4 @@
       </div>
     </footer>
   </body>
-
-  <script>
-    window.onload = () => {
-      const grid = document.getElementById("my-grid");
-
-      const masonry = new Masonry(grid, {
-        itemSelector: ".my-grid-item",
-        gutter: 35,
-      });
-    };
-
-    const toggleSearch = () => {
-      document.getElementById("searchInput").classList.toggle("hidden");
-      document.getElementById("searchIcon").classList.toggle("bg-[#F5F0EC]");
-    };
-
-    const modal = document.getElementById("modal");
-    const closeButton = document.getElementById("close-button");
-
-    const cardProjekty = document.getElementById("card-projekty");
-    const cardWizualizacje = document.getElementById("card-wizualizacje");
-    const cardRealizacje = document.getElementById("card-realizacje");
-
-    const modalProjekty = document.getElementById("modal-projekty");
-    const modalWizualizacje = document.getElementById("modal-wizualizacje");
-    const modalRealizacje = document.getElementById("modal-realizacje");
-
-    const openProjektyModal = () => {
-      modal.classList.remove("hidden");
-      modalProjekty.classList.remove("hidden");
-      modalWizualizacje.classList.add("hidden");
-      modalRealizacje.classList.add("hidden");
-    };
-
-    const openWizualizacjeModal = () => {
-      modal.classList.remove("hidden");
-      modalProjekty.classList.add("hidden");
-      modalWizualizacje.classList.remove("hidden");
-      modalRealizacje.classList.add("hidden");
-    };
-
-    const openRealizacjeModal = () => {
-      modal.classList.remove("hidden");
-      modalProjekty.classList.add("hidden");
-      modalWizualizacje.classList.add("hidden");
-      modalRealizacje.classList.remove("hidden");
-    };
-
-    const closeModal = () => {
-      modal.classList.add("hidden");
-    };
-
-    cardProjekty.onclick = () => openProjektyModal();
-    cardWizualizacje.onclick = () => openWizualizacjeModal();
-    cardRealizacje.onclick = () => openRealizacjeModal();
-    closeButton.onclick = () => closeModal();
-
-    // close modal when clicking on window
-    window.onclick = function (event) {
-      const modal = document.getElementById("modal");
-      if (event.target == modal) {
-        modal.classList.add("hidden");
-      }
-    };
-  </script>
 </html>

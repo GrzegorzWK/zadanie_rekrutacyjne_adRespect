@@ -14,34 +14,104 @@ const toggleSearch = () => {
 
 const modal = document.getElementById("modal");
 const closeButton = document.getElementById("close-button");
+const modalContent = document.getElementById("modal-content");
+const modalWidth = document.getElementById("modal-width");
 
 const cardProjekty = document.getElementById("card-projekty");
 const cardWizualizacje = document.getElementById("card-wizualizacje");
 const cardRealizacje = document.getElementById("card-realizacje");
 
-const modalProjekty = document.getElementById("modal-projekty");
-const modalWizualizacje = document.getElementById("modal-wizualizacje");
-const modalRealizacje = document.getElementById("modal-realizacje");
-
 const openProjektyModal = () => {
   modal.classList.remove("hidden");
-  modalProjekty.classList.remove("hidden");
-  modalWizualizacje.classList.add("hidden");
-  modalRealizacje.classList.add("hidden");
+  modalWidth.classList.add('w-full')
+
+  const paragraphTitle = document.createElement("p");
+  paragraphTitle.innerText = "Przykładowe projekty:";
+  paragraphTitle.classList.add("leading-8");
+
+  const div = document.createElement("div");
+  div.classList.add("flex");
+  div.classList.add("gap-[30px]");
+
+  const firstImage = document.createElement("img");
+  const secondImage = document.createElement("img");
+  const thirdImage = document.createElement("img");
+
+  firstImage.setAttribute("src", "./media/img/Photo-7.png");
+  secondImage.setAttribute("src", "./media/img/Photo-9.png");
+  thirdImage.setAttribute("src", "./media/img/Photo-3.png");
+
+  firstImage.classList.add("w-[30%]");
+  secondImage.classList.add("w-[30%]");
+  thirdImage.classList.add("w-[30%]");
+
+  modalContent.replaceChildren(paragraphTitle);
+  modalContent.appendChild(div);
+  div.appendChild(firstImage);
+  div.appendChild(secondImage);
+  div.appendChild(thirdImage);
 };
 
 const openWizualizacjeModal = () => {
   modal.classList.remove("hidden");
-  modalProjekty.classList.add("hidden");
-  modalWizualizacje.classList.remove("hidden");
-  modalRealizacje.classList.add("hidden");
+modalWidth.classList.add('w-full')
+
+  const paragraphTitle = document.createElement("p");
+  paragraphTitle.innerText = "Przykładowe wizualizacje:";
+  paragraphTitle.classList.add("leading-8");
+
+  const div = document.createElement("div");
+  div.classList.add("flex");
+  div.classList.add("gap-[30px]");
+
+  const firstImage = document.createElement("img");
+  const secondImage = document.createElement("img");
+  const thirdImage = document.createElement("img");
+
+  firstImage.setAttribute("src", "./media/img/Photo-4.png");
+  secondImage.setAttribute("src", "./media/img/Photo-5.png");
+  thirdImage.setAttribute("src", "./media/img/Photo-6.png");
+
+  firstImage.classList.add("w-[30%]");
+  secondImage.classList.add("w-[30%]");
+  thirdImage.classList.add("w-[30%]");
+
+  modalContent.replaceChildren(paragraphTitle);
+  modalContent.appendChild(div);
+  div.appendChild(firstImage);
+  div.appendChild(secondImage);
+  div.appendChild(thirdImage);
 };
 
 const openRealizacjeModal = () => {
   modal.classList.remove("hidden");
-  modalProjekty.classList.add("hidden");
-  modalWizualizacje.classList.add("hidden");
-  modalRealizacje.classList.remove("hidden");
+  modalWidth.classList.add('w-full')
+
+  const paragraphTitle = document.createElement("p");
+  paragraphTitle.innerText = "Przykładowe wizualizacje:";
+  paragraphTitle.classList.add("leading-8");
+
+  const div = document.createElement("div");
+  div.classList.add("flex");
+  div.classList.add("gap-[30px]");
+
+  const firstImage = document.createElement("img");
+  const secondImage = document.createElement("img");
+  const thirdImage = document.createElement("img");
+
+  firstImage.setAttribute("src", "./media/img/Photo-1.png");
+  secondImage.setAttribute("src", "./media/img/Photo-2.png");
+  thirdImage.setAttribute("src", "./media/img/Photo-8.png");
+
+  firstImage.classList.add("w-[30%]");
+  secondImage.classList.add("w-[30%]");
+  thirdImage.classList.add("w-[30%]");
+
+  modalContent.replaceChildren(paragraphTitle);
+  modalContent.appendChild(div);
+  div.appendChild(firstImage);
+  div.appendChild(secondImage);
+  div.appendChild(thirdImage);
 };
 
 const closeModal = () => {
@@ -66,11 +136,13 @@ const photoCollection = document.querySelectorAll(".photo");
 
 Array.from(photoCollection).forEach((item) => {
   item.addEventListener("click", (e) => {
-    src = e.target.src;
+    src = `./media/img/${e.target.id}.png`;
     modal.classList.remove("hidden");
-    const modalC = document.getElementById("modal-content");
+
     const newImg = document.createElement("img");
     newImg.setAttribute("src", src);
-    modalC.replaceChildren(newImg);
+
+    modalWidth.classList.add('w-fit')
+    modalContent.replaceChildren(newImg);
   });
 });
