@@ -12,7 +12,7 @@
   <body class="font-['Inter']">
     <nav
       id="nawigacja"
-      class="flex items-center sticky top-0 h-[59px] bg-[#FFFFFF] px-[89px]"
+      class="flex items-center sticky top-0 z-10 h-[59px] bg-[#FFFFFF] px-[89px]"
     >
       <div class="flex w-full justify-between">
         <img src="./media/icons/giarddesign_black.svg" alt="" class="inline" />
@@ -109,12 +109,12 @@
 
       <!-- Hero IMG -->
       <div>
-        <div class="flex h-[737px] w-[688px]">
-          <img src="./media/img/hero_photo.png" alt="Hero photo" />
+        <div class="flex h-[737px] w-[688px] relative ">
+          <img src="./media/img/hero_photo.png" alt="Hero photo" class="z-0"/>
           <div
-            class="bg-[#F5F0EC] h-[96px] w-[192px] bottom-0 -right-1 flex justify-evenly items-center z-10"
+            class="bg-[#F5F0EC] h-[96px] w-[192px] absolute bottom-0 right-0 flex justify-evenly items-center z-0"
           >
-            <div class="h-[49px] w-[49px] flex justify-center items-center">
+            <div class="h-[49px] w-[49px] flex justify-center items-center z-10">
               <img
                 id="prev-slide"
                 src="./media/icons/arrow_left.svg"
