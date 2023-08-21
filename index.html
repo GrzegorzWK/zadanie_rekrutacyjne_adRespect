@@ -7,11 +7,9 @@
     <!-- Scripts -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body class="font-['Inter']">
-    <!--https://tailwindcss.com/docs/background-color 
-        https://masonry.desandro.com/
-    -->
     <nav
       id="nawigacja"
       class="flex items-center h-[59px] bg-[#FFFFFF] mr-[89px] ml-[89px]"
@@ -20,18 +18,59 @@
         <img src="./media/icons/giarddesign_black.svg" alt="" class="inline" />
         <!-- <p class="text-[19px] self-center">giarddesign</p> -->
         <div id="nav" class="flex w-[445px] justify-between">
-          <div id="oferta-nav-div" class="flex gap-[5px] self-center">
-            <p class="text-[15px]">Oferta</p>
-            <img src="./media/icons/chevron.svg" alt="down chevron" />
+          <div
+            id="oferta-nav-div"
+            class="flex gap-[5px] self-center relative"
+          >
+            <button class="peer text-[15px]">
+              Oferta
+              <img
+                src="./media/icons/chevron.svg"
+                alt="down chevron"
+                class="inline"
+              />
+            </button>
+            <div
+              class="hidden peer-hover:flex hover:flex w-max flex-col absolute z-10 top-full bg-white drop-shadow-lg"
+            >
+              <a
+                href="#"
+                class="px-5 py-3 hover:bg-[#F5F0EC]"
+                >Projekty</a
+              >
+              <a
+                href="#"
+                class="px-5 py-3 hover:bg-[#F5F0EC]"
+                >Wizualizacje</a
+              >
+              <a
+                href="#"
+                class="px-5 py-3 hover:bg-[#F5F0EC]"
+                >Realizacje</a
+              >
+            </div>
           </div>
-          <p class="text-[15px] self-center">O firmie</p>
-          <p class="text-[15px] self-center">Realizacje</p>
-          <p class="text-[15px] self-center">Kontakt</p>
+
+          <a
+            href="#"
+            class="text-[15px] self-center hover:border-b-[1px] border-black"
+            >O firmie</a
+          >
+          <a
+            href="#"
+            class="text-[15px] self-center hover:border-b-[1px] border-black"
+            >Realizacje</a
+          >
+          <a
+            href="#"
+            class="text-[15px] self-center hover:border-b-[1px] border-black"
+            >Kontakt</a
+          >
           <img
             id="search"
             src="./media/icons/search.svg"
             alt="Search Icon"
-            class="inline"
+            class="inline hover:bg-[#F5F0EC]"
           />
         </div>
       </div>
