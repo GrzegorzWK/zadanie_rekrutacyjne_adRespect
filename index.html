@@ -110,7 +110,7 @@
       </div>
 
       <!-- Hero IMG -->
-      <div>
+      <div class="hidden md:block">
         <div class="flex h-[737px] w-[688px] relative">
           <img src="./media/img/hero_photo.png" alt="Hero photo" class="z-0" />
           <div
@@ -147,13 +147,13 @@
       <!-- Text header -->
       <div
         id="oferta-text"
-        class="w-[1040px] mb-[100px] self-center flex flex-col justify-around"
+        class="md:w-[1040px] w-fit mb-[100px] self-center flex flex-col justify-around"
       >
         <p class="text-[12px] text-[#1B5B31]">Oferta</p>
         <p class="text-[48px] font-['Montserrat']">
           Działamy <i class="font-['Inter']">kompleksowo</i>
         </p>
-        <p class="w-[709px]">
+        <p class="w-[70%]">
           Oferujemy kompletną obsługę inwestycji terenów zielonych. Projektujemy
           nowoczesne ogrody przydomowe oraz rezydencjonalne. Stworzymy dla
           Ciebie projekt, zwizualizujemy go i wcielimy w życie, a na każdym
@@ -284,7 +284,7 @@
     <section id="o-firmie" class="bg-[#1B5B31] text-[#F5F0EC]">
       <!-- photo -->
       <div class="h-[720px] flex gap-[64px]">
-        <div>
+        <div class="hidden md:block">
           <img
             src="./media/img/o_firmie_photo.png"
             alt=""
@@ -446,12 +446,16 @@
     <!-- Section instagram -->
     <section
       id="instagram"
-      class="h-[478px] py-[60px] px-[200px] bg-[#F5F0EC] text-[#F5F0EC] z-0"
+      class="md:h-[478px] md:py-[60px] md:px-[200px] bg-[#F5F0EC] text-[#F5F0EC] z-0"
     >
-      <div class="bg-[#1B5B31] py-[120px] px-[110px] flex gap-[64px]">
-        <div class="relative z-0">
-          <div class="w-[599px] text-[40px] font-['Montserrat'] leading-tight">
-            <p class="absolute bottom-0 left-0 z-0">
+      <div
+        class="bg-[#1B5B31] py-[120px] px-[110px] flex flex-col md:flex-row gap-[64px]"
+      >
+        <div class="z-0">
+          <div
+            class="md:w-[599px] text-[40px] font-['Montserrat'] leading-tight"
+          >
+            <p class="bottom-0 left-0 z-0">
               Zostańmy w kontakcie!<br />Znajdziesz nas na
               <i class="font-['Inter']">Instagramie.</i>
             </p>
@@ -499,8 +503,8 @@
           <div class="w-full border-b-2 border-[#F5F0EC]"></div>
 
           <!-- contact -->
-          <div class="h-[21px] flex justify-between">
-            <div class="flex gap-[48px]">
+          <div class="flex flex-col md:flex-row justify-between">
+            <div class="flex flex-col md:flex-row gap-[48px]">
               <p>Kontakt</p>
               <p>Instagram</p>
               <p>Facebook</p>
