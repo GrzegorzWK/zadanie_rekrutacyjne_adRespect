@@ -16,6 +16,7 @@ const modal = document.getElementById("modal");
 const closeButton = document.getElementById("close-button");
 const modalContent = document.getElementById("modal-content");
 const modalWidth = document.getElementById("modal-width");
+const galleryControls = document.getElementById("gallery-controls");
 
 const cardProjekty = document.getElementById("card-projekty");
 const cardWizualizacje = document.getElementById("card-wizualizacje");
@@ -23,7 +24,8 @@ const cardRealizacje = document.getElementById("card-realizacje");
 
 const openProjektyModal = () => {
   modal.classList.remove("hidden");
-  modalWidth.classList.add('w-full')
+  modalWidth.classList.add("w-full");
+  galleryControls.classList.add("hidden");
 
   const paragraphTitle = document.createElement("p");
   paragraphTitle.innerText = "Przykładowe projekty:";
@@ -54,7 +56,8 @@ const openProjektyModal = () => {
 
 const openWizualizacjeModal = () => {
   modal.classList.remove("hidden");
-modalWidth.classList.add('w-full')
+  modalWidth.classList.add("w-full");
+  galleryControls.classList.add("hidden");
 
   const paragraphTitle = document.createElement("p");
   paragraphTitle.innerText = "Przykładowe wizualizacje:";
@@ -85,7 +88,8 @@ modalWidth.classList.add('w-full')
 
 const openRealizacjeModal = () => {
   modal.classList.remove("hidden");
-  modalWidth.classList.add('w-full')
+  modalWidth.classList.add("w-full");
+  galleryControls.classList.add("hidden");
 
   const paragraphTitle = document.createElement("p");
   paragraphTitle.innerText = "Przykładowe wizualizacje:";
@@ -133,16 +137,79 @@ window.onclick = function (event) {
 
 // Photo Gallery
 const photoCollection = document.querySelectorAll(".photo");
+let globalSrc;
 
 Array.from(photoCollection).forEach((item) => {
   item.addEventListener("click", (e) => {
     src = `./media/img/${e.target.id}.png`;
+    globalSrc = src;
     modal.classList.remove("hidden");
+    galleryControls.classList.remove("hidden");
 
     const newImg = document.createElement("img");
     newImg.setAttribute("src", src);
 
-    modalWidth.classList.add('w-fit')
+    modalWidth.classList.add("w-fit");
     modalContent.replaceChildren(newImg);
   });
 });
+
+const prevPhoto = document.getElementById("prev-photo");
+const NextPhoto = document.getElementById("next-photo");
+
+const showPrevPhoto = () => {
+  const extension = ".png";
+  const path = "./media/img/Photo-";
+  const number = parseInt(globalSrc.split("-")[1]);
+
+  let newNumber;
+  if (number == 1) {
+    newNumber = 9;
+  } else {
+    newNumber = number - 1;
+  }
+
+  newSrc = path.concat(newNumber, extension);
+  src = `./media/img/${newSrc}.png`;
+
+  modal.classList.remove("hidden");
+  galleryControls.classList.remove("hidden");
+
+  const newImg = document.createElement("img");
+  newImg.setAttribute("src", newSrc);
+
+  modalWidth.classList.add("w-fit");
+  modalContent.replaceChildren(newImg);
+
+  globalSrc = src;
+};
+
+const showNextPhoto = () => {
+  const extension = ".png";
+  const path = "./media/img/Photo-";
+  const number = parseInt(globalSrc.split("-")[1]);
+
+  let newNumber;
+  if (number == 9) {
+    newNumber = 1;
+  } else {
+    newNumber = number + 1;
+  }
+
+  newSrc = path.concat(newNumber, extension);
+  src = `./media/img/${newSrc}.png`;
+
+  modal.classList.remove("hidden");
+  galleryControls.classList.remove("hidden");
+
+  const newImg = document.createElement("img");
+  newImg.setAttribute("src", newSrc);
+
+  modalWidth.classList.add("w-fit");
+  modalContent.replaceChildren(newImg);
+
+  globalSrc = src;
+};
+
+prevPhoto.onclick = () => showPrevPhoto();
+NextPhoto.onclick = () => showNextPhoto();
