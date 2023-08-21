@@ -12,16 +12,13 @@
   <body class="font-['Inter']">
     <nav
       id="nawigacja"
-      class="flex items-center h-[59px] bg-[#FFFFFF] mr-[89px] ml-[89px]"
+      class="flex items-center sticky top-0 h-[59px] bg-[#FFFFFF] px-[89px]"
     >
       <div class="flex w-full justify-between">
         <img src="./media/icons/giarddesign_black.svg" alt="" class="inline" />
         <!-- <p class="text-[19px] self-center">giarddesign</p> -->
-        <div id="nav" class="flex w-[445px] justify-between">
-          <div
-            id="oferta-nav-div"
-            class="flex gap-[5px] self-center relative"
-          >
+        <div id="nav" class="flex w-max justify-between gap-[48px]">
+          <div id="oferta-nav-div" class="flex gap-[5px] self-center relative">
             <button class="peer text-[15px]">
               Oferta
               <img
@@ -33,21 +30,9 @@
             <div
               class="hidden peer-hover:flex hover:flex w-max flex-col absolute z-10 top-full bg-white drop-shadow-lg"
             >
-              <a
-                href="#"
-                class="px-5 py-3 hover:bg-[#F5F0EC]"
-                >Projekty</a
-              >
-              <a
-                href="#"
-                class="px-5 py-3 hover:bg-[#F5F0EC]"
-                >Wizualizacje</a
-              >
-              <a
-                href="#"
-                class="px-5 py-3 hover:bg-[#F5F0EC]"
-                >Realizacje</a
-              >
+              <a href="#" class="px-5 py-3 hover:bg-[#F5F0EC]">Projekty</a>
+              <a href="#" class="px-5 py-3 hover:bg-[#F5F0EC]">Wizualizacje</a>
+              <a href="#" class="px-5 py-3 hover:bg-[#F5F0EC]">Realizacje</a>
             </div>
           </div>
 
@@ -66,12 +51,21 @@
             class="text-[15px] self-center hover:border-b-[1px] border-black"
             >Kontakt</a
           >
-          <img
-            id="search"
-            src="./media/icons/search.svg"
-            alt="Search Icon"
-            class="inline hover:bg-[#F5F0EC]"
-          />
+          <button onclick="toggleSearch()">
+            <input
+              type="text"
+              name="searchBar"
+              id="searchInput"
+              placeholder="  Wyszukaj..."
+              class="hidden p-1 h-full w-max bg-[#F5F0EC] rounded-full"
+            />
+            <img
+              id="searchIcon"
+              src="./media/icons/search.svg"
+              alt="Search Icon"
+              class="p-1 inline rounded-full"
+            />
+          </button>
         </div>
       </div>
     </nav>
@@ -114,26 +108,28 @@
       </div>
 
       <!-- Hero IMG -->
-      <div class="relative flex h-[737px] w-[688px]">
-        <img src="./media/img/hero_photo.png" alt="Hero photo" />
-        <div
-          class="bg-[#F5F0EC] h-[96px] w-[192px] absolute bottom-0 right-0 flex justify-evenly items-center"
-        >
-          <div class="h-[49px] w-[49px] flex justify-center items-center">
-            <img
-              id="prev-slide"
-              src="./media/icons/arrow_left.svg"
-              alt="Arrow left - show previous slide"
-              class="inline"
-            />
-          </div>
-          <div class="h-[49px] w-[49px] flex justify-center items-center">
-            <img
-              id="next-slide"
-              src="./media/icons/arrow_right.svg"
-              alt="Arrow right - show next image"
-              class="inline"
-            />
+      <div>
+        <div class="flex h-[737px] w-[688px]">
+          <img src="./media/img/hero_photo.png" alt="Hero photo" />
+          <div
+            class="bg-[#F5F0EC] h-[96px] w-[192px] bottom-0 right-0 flex justify-evenly items-center z-10"
+          >
+            <div class="h-[49px] w-[49px] flex justify-center items-center">
+              <img
+                id="prev-slide"
+                src="./media/icons/arrow_left.svg"
+                alt="Arrow left - show previous slide"
+                class="inline"
+              />
+            </div>
+            <div class="h-[49px] w-[49px] flex justify-center items-center">
+              <img
+                id="next-slide"
+                src="./media/icons/arrow_right.svg"
+                alt="Arrow right - show next image"
+                class="inline"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -441,6 +437,11 @@
         itemSelector: "#grid-item",
         gutter: 25,
       });
+    };
+
+    const toggleSearch = () => {
+      document.getElementById("searchInput").classList.toggle("hidden");
+      document.getElementById("searchIcon").classList.toggle("bg-[#F5F0EC]");
     };
   </script>
 
